@@ -1,8 +1,13 @@
-DROP TABLE archiveStudent;
+/*
+----------------------------------------------------------------------
+--            ARCHIVESTUDENT Table
+----------------------------------------------------------------------
+*/
+DROP TABLE archivestudent;
 
-CREATE TABLE archiveStudent
-(
-  stdid            INT primary key,
+CREATE TABLE archivestudent
+( 
+  stdid            INT  primary key,
   fname            VARCHAR2(50) NOT NULL,
   lname            VARCHAR2(50) NOT NULL,
   mi               VARCHAR2(1),
@@ -13,5 +18,5 @@ CREATE TABLE archiveStudent
   zip              VARCHAR2(9),
   phone            VARCHAR2(15),
   advid            VARCHAR2(15)
-);
+); 
 

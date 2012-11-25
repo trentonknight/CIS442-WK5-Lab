@@ -1,0 +1,807 @@
+mansf843@XE> spool CIS442-Mansfield-LAB5.txt create;
+DROP TRIGGER onDelete;
+
+Trigger dropped.
+
+mansf843@XE> DROP TRIGGER onInsert;
+DROP TRIGGER onInsert
+*
+ERROR at line 1:
+ORA-04080: trigger 'ONINSERT' does not exist
+
+
+mansf843@XE> @/home/trentonknight/Development/CIS442-WK5-Lab/CIS442-WK5-ONDELETE.sql;
+
+Trigger created.
+
+mansf843@XE> SELECT * from USER_TRIGGERS;
+
+TRIGGER_NAME		       TRIGGER_TYPE
+------------------------------ ----------------
+TRIGGERING_EVENT
+------------------------------------------------------------------------------------------------------------------------------------
+TABLE_OWNER		       BASE_OBJECT_TYPE TABLE_NAME
+------------------------------ ---------------- ------------------------------
+COLUMN_NAME
+------------------------------------------------------------------------------------------------------------------------------------
+REFERENCING_NAMES
+--------------------------------------------------------------------------------------------------------------------------------
+WHEN_CLAUSE
+------------------------------------------------------------------------------------------------------------------------------------
+STATUS
+--------
+DESCRIPTION
+------------------------------------------------------------------------------------------------------------------------------------
+ACTION_TYPE TRIGGER_BODY								     CROSSED BEF BEF AFT AFT INS FIR APP
+----------- -------------------------------------------------------------------------------- ------- --- --- --- --- --- --- ---
+ONDELETE		       BEFORE EACH ROW
+DELETE
+MANSF843		       TABLE		STUDENT
+
+REFERENCING NEW AS NEW OLD AS OLD
+
+ENABLED
+onDelete
+BEFORE DELETE ON Student
+FOR EACH ROW
+PL/SQL	    BEGIN									     NO      NO  NO  NO  NO  NO  YES NO
+	    INSERT INTO ARCHIVESTUDENT(STDID,FNAME,LNAME,MI,MAJORID,ADDRESS,CITY,STATE
+
+
+@/home/trentonknight/Development/CIS442-WK5-Lab/createtabs.sql;
+@/home/trentonknight/Development/CIS442-WK5-Lab/createarchive.sql;
+
+Table dropped.
+
+
+Table created.
+
+mansf843@XE> 
+Table dropped.
+
+
+Table created.
+
+mansf843@XE> @/home/trentonknight/Development/CIS442-WK5-Lab/oldloadtab.sql;
+
+0 rows deleted.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+mansf843@XE> SELECT * FROM STUDENT;
+
+     STDID FNAME					      LNAME						 M MAJORID
+---------- -------------------------------------------------- -------------------------------------------------- - ---------------
+ADDRESS 					   CITY 					      ST ZIP	   PHONE
+-------------------------------------------------- -------------------------------------------------- -- --------- ---------------
+ADVID
+---------------
+	 1 Samuel					      Smith						 D CS
+1234 Main Street				   Monument					      CO 80902	   719 260-1234
+100
+
+	 2 Marylin					      Manson						 M CIS
+246 Tejon Street				   Colorado Springs				      CO 80909	   719 570-2468
+102
+
+	 3 Joanne					      Wilson						 D HIS
+579 N. Nevada					   Colorado Springs				      CO 80919	   719 575-1001
+107
+
+	 4 Manny					      Starr						   BUS
+529 Flying W Ranch Road 			   Colorado Springs				      CO 80920	   719 330-1072
+102
+
+	 5 Pat						      Pullman						 R ECO
+468 Centennial Blvd, Apt. E			   Colorado Springs				      CO 80919	   719 358-5422
+103
+
+	 6 Tim						      Brown						 F ENG
+12 Bijou Street 				   Colorado Springs				      CO 80907	   719 651-1234
+107
+
+	 7 Barbara					      Runza						 W ECO
+722 Garden of the Gods Road			   Colorado Springs				      CO 80920	   719 531-4472
+100
+
+	 8 Dave 					      Elgass						 R MUS
+222 North Nevada				   Colorado Springs				      CO 80920	   719 570-6543
+109
+
+	 9 Maria					      Roberts						 M NUR
+540-A Fillmore					   Colorado Springs				      CO 80920	   719 395-5431
+107
+
+	10 Dean 					      Calhoun						   MAT
+6712 Blue Bird Drive				   Colorado Springs				      CO 80903	   719 264-7074
+102
+
+	11 Barbara					      Runza						 W ECO
+722 Garden of the Gods Road			   Colorado Springs				      CO 80920	   719 531-4472
+110
+
+	12 Steve					      Knight						 R BUS
+456 East Pikes Peak				   Manitou Springs				      CO 80190	   719 345-9007
+100
+
+	13 Martha					      Lowell						 Q UND
+3458 Fountain Blvd.				   Aurora					      CO 80220	   303 576-6891
+105
+
+	14 Debra					      Calhoun						   MAT
+6712 Broken Wing Street 			   Denver					      CO 80235	   303 388-1290
+104
+
+	15 Andrew					      Baxter						 D CS
+1234 Main Street				   Monument					      CO 80902	   719 234-1234
+109
+
+	16 Mary 					      Mitchell						 M CIS
+246 Tejon Street				   Denver					      CO 80229	   303 450-2668
+106
+
+	17 Joe						      Shahan						 D PS
+1625Woodmor Dr. 				   Monument					      CO 80931	   719 354-1621
+100
+
+	18 Jeff 					      Schott						 R ENG
+1234 Main Dr.					   Englewood					      CO 80931	   303 354-1621
+109
+
+	19 Jim						      Fry						   BUS
+529 E. Boulder Street				   Colorado Springs				      CO 80920	   719 330-4245
+107
+
+	20 Patrick					      Zbylski						 R ECO
+468 Bedford Lane				   Colorado Springs				      CO 80919	   719 358-5334
+102
+
+	21 Thom 					      Black						 F ENG
+123 E Ramona					   Colorado Springs				      CO 80907	   719 651-2345
+101
+
+     STDID FNAME					      LNAME						 M MAJORID
+---------- -------------------------------------------------- -------------------------------------------------- - ---------------
+ADDRESS 					   CITY 					      ST ZIP	   PHONE
+-------------------------------------------------- -------------------------------------------------- -- --------- ---------------
+ADVID
+---------------
+
+	22 Tanya					      Dunham						 W ECO
+2301 Ausint Bluffs Pkwy 			   Monument					      CO 80902	   719 531-4427
+108
+
+	23 Mitch					      Jaeger						 R MUS
+222 Vermijo					   Colorado Springs				      CO 80920	   719 565-4356
+110
+
+	24 Lisa 					      Lawson						 M NUR
+4560 Fillmore					   Colorado Springs				      CO 80920	   719 394-1231
+100
+
+	25 Jill 					      Perry						   MAT
+6712 Hancock Expressway 			   Colorado Springs				      CO 80903	   719 254-7874
+103
+
+	26 Bob						      Tibbs						 W ECO
+7322 Carefree North				   Colorado Springs				      CO 80920	   719 531-7244
+104
+
+	27 Sam						      Crepps						 R BUS
+456 East Palmer Park				   Manitou Springs				      CO 80190	   719 345-3297
+102
+
+	28 Stephen					      Austin						 F UND
+3458 S. Union Blvd.				   Colorado Springs				      CO 80920	   719 357-4491
+105
+
+	29 Tom						      Peyton						   MAT
+6712 Jackson Street				   Monument					      CO 80902	   719 591-1953
+108
+
+	30 Tim						      Presley						   CIS
+8812 Federal Boulevard				   Denver					      CO 80222	   303 458-1953
+110
+
+
+30 rows selected.
+
+mansf843@XE> delete from student where stdid=1;
+
+1 row deleted.
+
+mansf843@XE> delete from student where stdid=30;
+
+1 row deleted.
+
+mansf843@XE> SELECT * FROM ARCHIVESTUDENT;
+
+no rows selected
+
+mansf843@XE> select * from USER_TRIGGERS;
+
+no rows selected
+
+mansf843@XE> @/home/trentonknight/Development/CIS442-WK5-Lab/CIS442-WK5-ONDELETE.sql;
+
+Trigger created.
+
+mansf843@XE> select * from USER_TRIGGERS;
+
+TRIGGER_NAME		       TRIGGER_TYPE
+------------------------------ ----------------
+TRIGGERING_EVENT
+------------------------------------------------------------------------------------------------------------------------------------
+TABLE_OWNER		       BASE_OBJECT_TYPE TABLE_NAME
+------------------------------ ---------------- ------------------------------
+COLUMN_NAME
+------------------------------------------------------------------------------------------------------------------------------------
+REFERENCING_NAMES
+--------------------------------------------------------------------------------------------------------------------------------
+WHEN_CLAUSE
+------------------------------------------------------------------------------------------------------------------------------------
+STATUS
+--------
+DESCRIPTION
+------------------------------------------------------------------------------------------------------------------------------------
+ACTION_TYPE TRIGGER_BODY								     CROSSED BEF BEF AFT AFT INS FIR APP
+----------- -------------------------------------------------------------------------------- ------- --- --- --- --- --- --- ---
+ONDELETE		       BEFORE EACH ROW
+DELETE
+MANSF843		       TABLE		STUDENT
+
+REFERENCING NEW AS NEW OLD AS OLD
+
+ENABLED
+onDelete
+BEFORE DELETE ON Student
+FOR EACH ROW
+PL/SQL	    BEGIN									     NO      NO  NO  NO  NO  NO  YES NO
+	    INSERT INTO ARCHIVESTUDENT(STDID,FNAME,LNAME,MI,MAJORID,ADDRESS,CITY,STATE
+
+
+mansf843@XE> SELECT * FROM STUDENT;
+
+     STDID FNAME					      LNAME						 M MAJORID
+---------- -------------------------------------------------- -------------------------------------------------- - ---------------
+ADDRESS 					   CITY 					      ST ZIP	   PHONE
+-------------------------------------------------- -------------------------------------------------- -- --------- ---------------
+ADVID
+---------------
+	 2 Marylin					      Manson						 M CIS
+246 Tejon Street				   Colorado Springs				      CO 80909	   719 570-2468
+102
+
+	 3 Joanne					      Wilson						 D HIS
+579 N. Nevada					   Colorado Springs				      CO 80919	   719 575-1001
+107
+
+	 4 Manny					      Starr						   BUS
+529 Flying W Ranch Road 			   Colorado Springs				      CO 80920	   719 330-1072
+102
+
+	 5 Pat						      Pullman						 R ECO
+468 Centennial Blvd, Apt. E			   Colorado Springs				      CO 80919	   719 358-5422
+103
+
+	 6 Tim						      Brown						 F ENG
+12 Bijou Street 				   Colorado Springs				      CO 80907	   719 651-1234
+107
+
+	 7 Barbara					      Runza						 W ECO
+722 Garden of the Gods Road			   Colorado Springs				      CO 80920	   719 531-4472
+100
+
+	 8 Dave 					      Elgass						 R MUS
+222 North Nevada				   Colorado Springs				      CO 80920	   719 570-6543
+109
+
+	 9 Maria					      Roberts						 M NUR
+540-A Fillmore					   Colorado Springs				      CO 80920	   719 395-5431
+107
+
+	10 Dean 					      Calhoun						   MAT
+6712 Blue Bird Drive				   Colorado Springs				      CO 80903	   719 264-7074
+102
+
+	11 Barbara					      Runza						 W ECO
+722 Garden of the Gods Road			   Colorado Springs				      CO 80920	   719 531-4472
+110
+
+	12 Steve					      Knight						 R BUS
+456 East Pikes Peak				   Manitou Springs				      CO 80190	   719 345-9007
+100
+
+	13 Martha					      Lowell						 Q UND
+3458 Fountain Blvd.				   Aurora					      CO 80220	   303 576-6891
+105
+
+	14 Debra					      Calhoun						   MAT
+6712 Broken Wing Street 			   Denver					      CO 80235	   303 388-1290
+104
+
+	15 Andrew					      Baxter						 D CS
+1234 Main Street				   Monument					      CO 80902	   719 234-1234
+109
+
+	16 Mary 					      Mitchell						 M CIS
+246 Tejon Street				   Denver					      CO 80229	   303 450-2668
+106
+
+	17 Joe						      Shahan						 D PS
+1625Woodmor Dr. 				   Monument					      CO 80931	   719 354-1621
+100
+
+	18 Jeff 					      Schott						 R ENG
+1234 Main Dr.					   Englewood					      CO 80931	   303 354-1621
+109
+
+	19 Jim						      Fry						   BUS
+529 E. Boulder Street				   Colorado Springs				      CO 80920	   719 330-4245
+107
+
+	20 Patrick					      Zbylski						 R ECO
+468 Bedford Lane				   Colorado Springs				      CO 80919	   719 358-5334
+102
+
+	21 Thom 					      Black						 F ENG
+123 E Ramona					   Colorado Springs				      CO 80907	   719 651-2345
+101
+
+	22 Tanya					      Dunham						 W ECO
+2301 Ausint Bluffs Pkwy 			   Monument					      CO 80902	   719 531-4427
+108
+
+     STDID FNAME					      LNAME						 M MAJORID
+---------- -------------------------------------------------- -------------------------------------------------- - ---------------
+ADDRESS 					   CITY 					      ST ZIP	   PHONE
+-------------------------------------------------- -------------------------------------------------- -- --------- ---------------
+ADVID
+---------------
+
+	23 Mitch					      Jaeger						 R MUS
+222 Vermijo					   Colorado Springs				      CO 80920	   719 565-4356
+110
+
+	24 Lisa 					      Lawson						 M NUR
+4560 Fillmore					   Colorado Springs				      CO 80920	   719 394-1231
+100
+
+	25 Jill 					      Perry						   MAT
+6712 Hancock Expressway 			   Colorado Springs				      CO 80903	   719 254-7874
+103
+
+	26 Bob						      Tibbs						 W ECO
+7322 Carefree North				   Colorado Springs				      CO 80920	   719 531-7244
+104
+
+	27 Sam						      Crepps						 R BUS
+456 East Palmer Park				   Manitou Springs				      CO 80190	   719 345-3297
+102
+
+	28 Stephen					      Austin						 F UND
+3458 S. Union Blvd.				   Colorado Springs				      CO 80920	   719 357-4491
+105
+
+	29 Tom						      Peyton						   MAT
+6712 Jackson Street				   Monument					      CO 80902	   719 591-1953
+108
+
+
+28 rows selected.
+
+mansf843@XE> delete from student where stdid=27;
+
+1 row deleted.
+
+mansf843@XE> SELECT * FROM ARCHIVESTUDENT;
+
+     STDID FNAME					      LNAME						 M MAJORID
+---------- -------------------------------------------------- -------------------------------------------------- - ---------------
+ADDRESS 					   CITY 					      ST ZIP	   PHONE
+-------------------------------------------------- -------------------------------------------------- -- --------- ---------------
+ADVID
+---------------
+	27 Sam						      Crepps						 R BUS
+456 East Palmer Park				   Manitou Springs				      CO 80190	   719 345-3297
+102
+
+
+mansf843@XE> @/home/trentonknight/Development/CIS442-WK5-Lab/CIS442-WK5-ONINSERT.sql;
+
+     STDID FNAME					      LNAME						 M MAJORID
+---------- -------------------------------------------------- -------------------------------------------------- - ---------------
+ADDRESS 					   CITY 					      ST ZIP	   PHONE
+-------------------------------------------------- -------------------------------------------------- -- --------- ---------------
+ADVID
+---------------
+	27 Sam						      Crepps						 R BUS
+456 East Palmer Park				   Manitou Springs				      CO 80190	   719 345-3297
+102
+
+
+
+Sequence dropped.
+
+
+Sequence created.
+
+
+Trigger created.
+
+mansf843@XE> select * from USER_TRIGGERS;
+
+TRIGGER_NAME		       TRIGGER_TYPE
+------------------------------ ----------------
+TRIGGERING_EVENT
+------------------------------------------------------------------------------------------------------------------------------------
+TABLE_OWNER		       BASE_OBJECT_TYPE TABLE_NAME
+------------------------------ ---------------- ------------------------------
+COLUMN_NAME
+------------------------------------------------------------------------------------------------------------------------------------
+REFERENCING_NAMES
+--------------------------------------------------------------------------------------------------------------------------------
+WHEN_CLAUSE
+------------------------------------------------------------------------------------------------------------------------------------
+STATUS
+--------
+DESCRIPTION
+------------------------------------------------------------------------------------------------------------------------------------
+ACTION_TYPE TRIGGER_BODY								     CROSSED BEF BEF AFT AFT INS FIR APP
+----------- -------------------------------------------------------------------------------- ------- --- --- --- --- --- --- ---
+ONINSERT		       AFTER EACH ROW
+INSERT
+MANSF843		       TABLE		STUDENT
+
+REFERENCING NEW AS NEW OLD AS OLD
+
+ENABLED
+onInsert
+AFTER INSERT ON Student
+FOR EACH ROW
+PL/SQL	    BEGIN									     NO      NO  NO  NO  NO  NO  YES NO
+	    INSERT INTO STUDENT(STDID)
+	    VALUES(newID.NEXTVAL);
+	    END;
+
+ONDELETE		       BEFORE EACH ROW
+DELETE
+MANSF843		       TABLE		STUDENT
+
+REFERENCING NEW AS NEW OLD AS OLD
+
+ENABLED
+onDelete
+BEFORE DELETE ON Student
+FOR EACH ROW
+PL/SQL	    BEGIN									     NO      NO  NO  NO  NO  NO  YES NO
+	    INSERT INTO ARCHIVESTUDENT(STDID,FNAME,LNAME,MI,MAJORID,ADDRESS,CITY,STATE
+
+
+mansf843@XE> @/home/trentonknight/Development/CIS442-WK5-Lab/createtabs.sql;
+
+Table dropped.
+
+
+Table created.
+
+mansf843@XE> @/home/trentonknight/Development/CIS442-WK5-Lab/loadtabs.sql;
+
+0 rows deleted.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+mansf843@XE> SELECT * FROM STUDENT;
+
+     STDID FNAME					      LNAME						 M MAJORID
+---------- -------------------------------------------------- -------------------------------------------------- - ---------------
+ADDRESS 					   CITY 					      ST ZIP	   PHONE
+-------------------------------------------------- -------------------------------------------------- -- --------- ---------------
+ADVID
+---------------
+	 1 Samuel					      Smith						 D CS
+1234 Main Street				   Monument					      CO 80902	   719 260-1234
+100
+
+	 6 Marylin					      Manson						 M CIS
+246 Tejon Street				   Colorado Springs				      CO 80909	   719 570-2468
+102
+
+	11 Joanne					      Wilson						 D HIS
+579 N. Nevada					   Colorado Springs				      CO 80919	   719 575-1001
+107
+
+	16 Manny					      Starr						   BUS
+529 Flying W Ranch Road 			   Colorado Springs				      CO 80920	   719 330-1072
+102
+
+	21 Pat						      Pullman						 R ECO
+468 Centennial Blvd, Apt. E			   Colorado Springs				      CO 80919	   719 358-5422
+103
+
+	26 Tim						      Brown						 F ENG
+12 Bijou Street 				   Colorado Springs				      CO 80907	   719 651-1234
+107
+
+	31 Barbara					      Runza						 W ECO
+722 Garden of the Gods Road			   Colorado Springs				      CO 80920	   719 531-4472
+100
+
+	36 Dave 					      Elgass						 R MUS
+222 North Nevada				   Colorado Springs				      CO 80920	   719 570-6543
+109
+
+	41 Maria					      Roberts						 M NUR
+540-A Fillmore					   Colorado Springs				      CO 80920	   719 395-5431
+107
+
+	46 Dean 					      Calhoun						   MAT
+6712 Blue Bird Drive				   Colorado Springs				      CO 80903	   719 264-7074
+102
+
+	51 Barbara					      Runza						 W ECO
+722 Garden of the Gods Road			   Colorado Springs				      CO 80920	   719 531-4472
+110
+
+	56 Steve					      Knight						 R BUS
+456 East Pikes Peak				   Manitou Springs				      CO 80190	   719 345-9007
+100
+
+	61 Martha					      Lowell						 Q UND
+3458 Fountain Blvd.				   Aurora					      CO 80220	   303 576-6891
+105
+
+	66 Debra					      Calhoun						   MAT
+6712 Broken Wing Street 			   Denver					      CO 80235	   303 388-1290
+104
+
+	71 Andrew					      Baxter						 D CS
+1234 Main Street				   Monument					      CO 80902	   719 234-1234
+109
+
+	76 Mary 					      Mitchell						 M CIS
+246 Tejon Street				   Denver					      CO 80229	   303 450-2668
+106
+
+	81 Joe						      Shahan						 D PS
+1625Woodmor Dr. 				   Monument					      CO 80931	   719 354-1621
+100
+
+	86 Jeff 					      Schott						 R ENG
+1234 Main Dr.					   Englewood					      CO 80931	   303 354-1621
+109
+
+	91 Jim						      Fry						   BUS
+529 E. Boulder Street				   Colorado Springs				      CO 80920	   719 330-4245
+107
+
+	96 Patrick					      Zbylski						 R ECO
+468 Bedford Lane				   Colorado Springs				      CO 80919	   719 358-5334
+102
+
+       101 Thom 					      Black						 F ENG
+123 E Ramona					   Colorado Springs				      CO 80907	   719 651-2345
+101
+
+     STDID FNAME					      LNAME						 M MAJORID
+---------- -------------------------------------------------- -------------------------------------------------- - ---------------
+ADDRESS 					   CITY 					      ST ZIP	   PHONE
+-------------------------------------------------- -------------------------------------------------- -- --------- ---------------
+ADVID
+---------------
+
+       106 Tanya					      Dunham						 W ECO
+2301 Ausint Bluffs Pkwy 			   Monument					      CO 80902	   719 531-4427
+108
+
+       111 Mitch					      Jaeger						 R MUS
+222 Vermijo					   Colorado Springs				      CO 80920	   719 565-4356
+110
+
+       116 Lisa 					      Lawson						 M NUR
+4560 Fillmore					   Colorado Springs				      CO 80920	   719 394-1231
+100
+
+       121 Jill 					      Perry						   MAT
+6712 Hancock Expressway 			   Colorado Springs				      CO 80903	   719 254-7874
+103
+
+       126 Bob						      Tibbs						 W ECO
+7322 Carefree North				   Colorado Springs				      CO 80920	   719 531-7244
+104
+
+       131 Sam						      Crepps						 R BUS
+456 East Palmer Park				   Manitou Springs				      CO 80190	   719 345-3297
+102
+
+       136 Stephen					      Austin						 F UND
+3458 S. Union Blvd.				   Colorado Springs				      CO 80920	   719 357-4491
+105
+
+       141 Tom						      Peyton						   MAT
+6712 Jackson Street				   Monument					      CO 80902	   719 591-1953
+108
+
+       146 Tim						      Presley						   CIS
+8812 Federal Boulevard				   Denver					      CO 80222	   303 458-1953
+110
+
+
+30 rows selected.
+
