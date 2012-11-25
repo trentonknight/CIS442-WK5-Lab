@@ -1,3 +1,5 @@
+/*Jason Mansfield CIS-442 Lab 5, week 5*/
+/*Trigger for moving deleted rows to archivestudent table*/
 CREATE OR REPLACE TRIGGER onDelete
 BEFORE DELETE ON Student
 FOR EACH ROW

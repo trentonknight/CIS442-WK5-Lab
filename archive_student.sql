@@ -2,7 +2,7 @@ DROP TABLE archiveStudent;
 
 CREATE TABLE archiveStudent
 (
-  stdid            VARCHAR2(15),
+  stdid            INT,
   fname            VARCHAR2(50) NOT NULL,
   lname            VARCHAR2(50) NOT NULL,
   mi               VARCHAR2(1),
